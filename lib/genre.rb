@@ -26,4 +26,10 @@ class Genre
     genre.save
     genre
   end
+
+  def artists
+    arr = []
+    self.songs.each {|song| arr << song.artist if !arr.include?(song.artist)}
+    arr
+  end
 end
