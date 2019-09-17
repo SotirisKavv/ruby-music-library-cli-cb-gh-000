@@ -19,4 +19,13 @@ class MusicLibraryController
       answer = gets.strip
     end
   end
+
+  def list_songs
+    Song.all.sort do |a, b|
+      a.name <=> b.name
+    end
+    Song.all.each_with_index do |song, i|
+      puts "#{i+1}. #{song}"
+    end
+  end
 end
