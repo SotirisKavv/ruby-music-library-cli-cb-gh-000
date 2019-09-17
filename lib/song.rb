@@ -51,8 +51,8 @@ class Song
     if song == nil
       song = Song.new(infos[1])
     end
-    @artist = Artist.new(infos[0])
-    @genre = Genre.new(infos[2].gsub(".mp3", ""))
+    song.artist = Artist.new(infos[0])
+    song.genre = Genre.new(infos[2].gsub(".mp3", ""))
     song
   end
 
