@@ -40,6 +40,7 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    artist = gets.strip
+    artist_name = gets.strip
+    Artist.all.detect{|artist| artist.name == artist_name}.songs.sort{|a, b| a.name<=>b.name}
   end
 end
