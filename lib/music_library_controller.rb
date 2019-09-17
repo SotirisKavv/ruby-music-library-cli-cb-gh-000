@@ -44,7 +44,7 @@ class MusicLibraryController
     artist = Artist.all.detect{|artist| artist.name == artist_name}
     if artist != nil
       artist.songs.sort{|a, b| a.name<=>b.name}.each_with_index do |song, i|
-        puts "#{i+1}. #{song.name}"
+        puts "#{i+1}. #{song.name} - #{song.genre.name}"
       end
     end
   end
