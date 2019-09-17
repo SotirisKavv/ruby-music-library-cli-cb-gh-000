@@ -45,5 +45,21 @@ class Song
     end
   end
 
+  def self.new_from_filename(filename)
+    infos = filename.split(" - ")
+    if Song.find_by_name(infos[1]) == nil
+      song = Song.new(infos[1])
+      song.artist = infos[0]
+      song.genre = infos[2].gsub(".mp3", "")
+    end
+    song
+  end
+
+  def self.create_by_filename(filename)
+    song = Song.new_from_filename(filename)
+    song.save
+    song
+  end
+
 
 end
