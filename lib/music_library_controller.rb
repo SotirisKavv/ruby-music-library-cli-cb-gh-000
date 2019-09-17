@@ -25,7 +25,7 @@ class MusicLibraryController
       a.name <=> b.name
     end
     Song.all.each_with_index do |song, i|
-      puts "#{i+1}. #{song.name}"
+      puts "#{i+1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
     end
   end
 end
