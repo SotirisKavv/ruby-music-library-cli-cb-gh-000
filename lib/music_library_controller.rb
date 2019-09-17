@@ -61,7 +61,7 @@ class MusicLibraryController
   end
 
   def play_song
-    puts "Which song would you like to play?"
+    puts "Which song number would you like to play?"
     self.list_songs
     song_index = gets.strip.to_i
     if song_index >= 1 && song_index < Song.all.size
