@@ -48,11 +48,11 @@ class Song
   def self.new_from_filename(filename)
     infos = filename.split(" - ")
     song = Song.find_by_name(infos[1])
-    if  song == nil
+    if song == nil
       song = Song.new(infos[1])
-      @artist = Artist.new(infos[0])
-      @genre = Genre.new(infos[2].gsub(".mp3", ""))
     end
+    @artist = Artist.new(infos[0])
+    @genre = Genre.new(infos[2].gsub(".mp3", ""))
     song
   end
 
