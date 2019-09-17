@@ -8,7 +8,7 @@ class MusicLibraryController
     puts "Welcome to your music library!"
     answer = ""
     while answer != "exit"
-      answer = gets.stripe
+      answer = gets.strip
     end
   end
 end
