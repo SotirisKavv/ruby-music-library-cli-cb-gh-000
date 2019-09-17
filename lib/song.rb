@@ -50,8 +50,8 @@ class Song
     song = Song.find_by_name(infos[1])
     if  song == nil
       song = Song.new(infos[1])
-      song.artist = Artist.new(infos[0])
-      song.genre = Genre.new(infos[2].gsub(".mp3", ""))
+      @artist = Artist.new(infos[0])
+      @genre = Genre.new(infos[2].gsub(".mp3", ""))
     end
     song
   end
