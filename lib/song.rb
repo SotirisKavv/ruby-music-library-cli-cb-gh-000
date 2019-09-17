@@ -53,5 +53,6 @@ class Song
     if song == nil
       song = self.create(name)
     end
+    song
   end
 end
